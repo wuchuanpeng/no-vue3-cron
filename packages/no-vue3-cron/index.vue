@@ -866,7 +866,7 @@ export default defineComponent({
             }),
         });
         watch(() => props.cronValue, (newCron) => {
-            if(typeof(newCron) !== 'string') return false
+            if(typeof(newCron) !== 'string' || !newCron) return false
             let crons = newCron.split(" ");
             // 解析seconds
             let secondsText = crons[0].trim();
@@ -1002,6 +1002,8 @@ export default defineComponent({
                 state.year.rangeEnd = parseInt(yearsTexts[1])
             }
 
+        }, {
+          immediate: true
         })
         const getValue = () => {
             return state.cron
