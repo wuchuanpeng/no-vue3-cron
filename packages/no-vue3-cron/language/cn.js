@@ -23,8 +23,8 @@ export default {
     Day:{
         name:'天',
         every:'每一天',
-        intervalWeek:['每隔','周执行 从','开始'],
-        intervalDay:['每隔','天执行 从','天开始'],
+        intervalWeek:['每隔','天执行 从','开始'],
+        intervalDay:['每隔','天执行 从','日开始'],
         specificWeek:'具体星期几(可多选)',
         specificDay:'具体天数(可多选)',
         lastDay:'在这个月的最后一天',
@@ -32,7 +32,7 @@ export default {
         lastWeek:['在这个月的最后一个'],
         beforeEndMonth:['在本月底前','天'],
         nearestWeekday:['最近的工作日（周一至周五）至本月','日'],
-        someWeekday:['在这个月的第','个'],
+        someWeekday:['在这个月的第',''],
     },
     Week:['天','一','二','三','四','五','六'].map(val=>'星期'+val),
     Month:{

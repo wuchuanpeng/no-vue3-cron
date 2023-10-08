@@ -384,7 +384,7 @@
                     <el-row>
                         <el-radio v-model="state.day.cronEvery" label="8"
                         >{{ state.text.Day.lastWeek[0] }}
-                            <el-select v-model="state.day.cronLastSpecificDomDay">
+                            <el-select v-model="state.week.cronLastSpecificDomDay">
                                 <el-option
                                     v-for="(val, index) in 7"
                                     :key="index"
@@ -630,7 +630,6 @@ export default defineComponent({
                 rangeStart: 0,
                 rangeEnd: 0,
                 specificSpecific: [],
-                cronLastSpecificDomDay: 1,
                 cronDaysBeforeEomMinus: 0,
                 cronDaysNearestWeekday: 0,
             },
@@ -639,6 +638,7 @@ export default defineComponent({
                 incrementStart: 1,
                 incrementIncrement: 1,
                 specificSpecific: [],
+                cronLastSpecificDomDay: 1,
                 cronNthDayDay: 1,
                 cronNthDayNth: 1,
             },
@@ -750,6 +750,7 @@ export default defineComponent({
                     case "2":
                     case "4":
                     case "11":
+                    case "8":
                         days = "?";
                         break;
                     case "3":
@@ -767,9 +768,6 @@ export default defineComponent({
                         break;
                     case "7":
                         days = "LW";
-                        break;
-                    case "8":
-                        days = state.day.cronLastSpecificDomDay + "L";
                         break;
                     case "9":
                         days = "L-" + state.day.cronDaysBeforeEomMinus;
@@ -801,11 +799,13 @@ export default defineComponent({
                         break;
                     case "6":
                     case "7":
-                    case "8":
                     case "9":
                     case "10":
                         weeks = "?";
                         break;
+                    case "8":
+                      weeks = state.week.cronLastSpecificDomDay + "L";
+                      break;
                     case "11":
                         weeks = state.week.cronNthDayDay + "#" + state.week.cronNthDayNth;
                         break;
@@ -937,9 +937,6 @@ export default defineComponent({
                 state.day.cronEvery = "6";
             }else if (daysText === "LW") {
                 state.day.cronEvery = "7";
-            }else if (daysText.endsWith("L")) {
-                state.day.cronEvery = "8";
-                state.day.cronLastSpecificDomDay = parseInt(daysText.replaceAll("L", ""))
             }else if (daysText.startsWith("L-")) {
                 state.day.cronEvery = "9";
                 state.day.cronDaysBeforeEomMinus = parseInt(daysText.replaceAll("L-", ""))
@@ -960,6 +957,9 @@ export default defineComponent({
                     let weeksTexts = weeksText.split("#");
                     state.week.cronNthDayDay = parseInt(weeksTexts[0])
                     state.week.cronNthDayNth = parseInt(weeksTexts[1])
+                }else if (weeksText.endsWith("L")) {
+                  state.day.cronEvery = "8";
+                  state.week.cronLastSpecificDomDay = parseInt(weeksText.replaceAll("L", ""))
                 }
             }else {
                 state.day.cronEvery = "1";
