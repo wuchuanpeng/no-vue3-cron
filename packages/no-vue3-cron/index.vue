@@ -578,8 +578,8 @@
                 </el-tag>
             </div>
             <div class="buttonDiv">
-                <el-button type="primary" size="mini" @click.stop="handleChange">{{ state.text.Save }}</el-button>
-                <el-button type="primary" size="mini" @click="close">{{ state.text.Close }}</el-button>
+                <el-button type="primary" size="small" @click.stop="handleChange">{{ state.text.Save }}</el-button>
+                <el-button type="primary" size="small" @click="close">{{ state.text.Close }}</el-button>
             </div>
         </div>
     </div>

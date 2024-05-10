@@ -1,9 +1,9 @@
 {
   "name": "no-vue3-cron",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "private": false,
   "description": "Corn expression plugin based on vue3+elementplus（基于vue3+elementplus的corn表达式插件）",
-  "author": "suge",
+  "author": "nonone",
   "license": "MIT",
   "keywords": [
     "vue3",
@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "element-plus": "^1.0.2-beta.28",
-    "vue": "^3.0.0"
+    "element-plus": "^2.7.2",
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

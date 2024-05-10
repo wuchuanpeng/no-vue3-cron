@@ -3,7 +3,7 @@
     <h1>no-vue3-cron</h1>
     <el-input v-model="state.cron" placeholder="cron表达式...">
       <template #append>
-        <el-popover v-model:visible="state.cronPopover" width="700px" trigger="manual">
+        <el-popover :visible="state.cronPopover" width="700px" trigger="click">
             <noVue3Cron
                 :cron-value="state.cron"
                 @change="changeCron"

@@ -33,7 +33,7 @@ npm install no-vue3-cron
 //前置配置
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
-import 'element-plus/lib/theme-chalk/index.css'
+import 'element-plus/theme-chalk/index.css'
 import App from './App.vue'
 //全局引入
 import noVue3Cron from 'no-vue3-cron'
@@ -65,7 +65,7 @@ export default {
     <h1>no-vue3-cron</h1>
     <el-input v-model="state.cron" placeholder="cron表达式...">
       <template #append>
-        <el-popover v-model:visible="state.cronPopover" width="700px" trigger="manual">
+        <el-popover :visible="state.cronPopover" width="700px" trigger="click">
             <noVue3Cron
                 :cron-value="state.cron"
                 @change="changeCron"
