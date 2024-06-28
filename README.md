@@ -4,7 +4,7 @@
 ![CocoaPods](https://img.shields.io/npm/v/no-vue3-cron.svg)
 
 这是一个 cron 表达式生成插件,基于 vue3.0 与 element-plus 实现
-[demo](https://nonone.cc/no-vue3-cron/)
+[demo](https://175.178.217.179/no-vue3-cron/)
 
 ## vue3-cron
 参考[vue3-cron](https://github.com/sugdove/vue3-cron)实现，加入了cron回显
@@ -156,9 +156,7 @@ export default defineComponent ({
 
 ## 联系方式
 
-邮箱 : i@nonone.cc
-
-欢迎大家关注我做的网站: http://www.nonone.cc/
+欢迎大家关注我做的网站: https://175.178.217.179
 
 如果对您有帮助, 欢迎 star
 
